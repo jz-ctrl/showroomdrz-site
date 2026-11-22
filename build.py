@@ -1,39 +1,40 @@
 import json
-naics=[("325611","Soap and Other Detergent Manufacturing","Primary"),("325612","Polish and Other Sanitation Good Manufacturing",""),("325998","All Other Miscellaneous Chemical Product and Preparation Manufacturing",""),("424690","Other Chemical and Allied Products Merchant Wholesalers",""),("423850","Service Establishment Equipment and Supplies Merchant Wholesalers",""),("561720","Janitorial Services",""),("561790","Other Services to Buildings and Dwellings",""),("561210","Facilities Support Services",""),("561990","All Other Support Services",""),("811192","Car Washes",""),("541330","Engineering Services",""),("541715","Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",""),("541620","Environmental Consulting Services",""),("541690","Other Scientific and Technical Consulting Services",""),("541611","Administrative Management and General Management Consulting Services",""),("541511","Custom Computer Programming Services",""),("541512","Computer Systems Design Services",""),("541513","Computer Facilities Management Services",""),("541519","Other Computer Related Services",""),("513210","Software Publishers",""),("518210","Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",""),("334118","Computer Terminal and Other Computer Peripheral Equipment Manufacturing","")]
+naics=[("325611","Soap and Other Detergent Manufacturing","Primary"),("325612","Polish and Other Sanitation Good Manufacturing",""),("325998","All Other Miscellaneous Chemical Product and Preparation Manufacturing",""),("424690","Other Chemical and Allied Products Merchant Wholesalers",""),("423850","Service Establishment Equipment and Supplies Merchant Wholesalers",""),("811192","Car Washes",""),("561720","Janitorial Services",""),("561790","Other Services to Buildings and Dwellings",""),("561210","Facilities Support Services",""),("561990","All Other Support Services",""),("541330","Engineering Services",""),("541715","Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",""),("541620","Environmental Consulting Services",""),("541690","Other Scientific and Technical Consulting Services",""),("541611","Administrative Management and General Management Consulting Services",""),("541511","Custom Computer Programming Services",""),("541512","Computer Systems Design Services",""),("541513","Computer Facilities Management Services",""),("541519","Other Computer Related Services",""),("513210","Software Publishers",""),("518210","Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",""),("334118","Computer Terminal and Other Computer Peripheral Equipment Manufacturing","")]
 psc=[("6810","Chemicals"),("6850","Miscellaneous Chemical Specialties"),("7930","Cleaning and Polishing Compounds and Preparations"),("S201","Housekeeping: Custodial Janitorial"),("S299","Housekeeping: Other"),("B544","Special Studies/Analysis: Technology"),("R408","Support, Professional: Program Management/Support"),("R425","Support, Professional: Engineering/Technical"),("R499","Support, Professional: Other")]
 rows="\n".join(f'<tr><th scope="row">{c}</th><td>{d}{" <strong>(primary)</strong>" if p else ""}</td></tr>' for c,d,p in naics)
 prow="\n".join(f'<tr><th scope="row">{c}</th><td>{d}</td></tr>' for c,d in psc)
 URL="https://showroomdrz.com/"
 ld={"@context":"https://schema.org","@graph":[
- {"@type":["LocalBusiness","ProfessionalService"],"@id":URL+"#business","name":"ShowRoom Doctor Z","legalName":"ShowRoom Doctor Z Inc.","url":URL,
+ {"@type":["AutoRepair","LocalBusiness","ProfessionalService"],"@id":URL+"#business","name":"ShowRoom Doctor Z","legalName":"ShowRoom Doctor Z Inc.","url":URL,
   "image":URL+"images/og-image.jpg","logo":URL+"images/showroom-doctor-z-logo.png",
-  "description":"Clovis, California commercial cleaning and janitorial services, solar panel surface care, auto detailing, and maker of Miracle Spritz pH 4.6 multi-surface cleaner. California certified small business and DBE; SAM.gov registered.",
+  "description":"Premier auto detailing, ceramic coating, paint correction, and interior restoration in Clovis and Fresno, CA. Also offering solar panel surface care, commercial facility cleaning, and Miracle Spritz pH 4.6 multi-surface cleaner.",
   "telephone":"+1-559-492-6329","email":"drz@showroomdrz.com","priceRange":"Quote on request",
   "address":{"@type":"PostalAddress","streetAddress":"1004 San Jose Ave, Suite 101","addressLocality":"Clovis","addressRegion":"CA","postalCode":"93612","addressCountry":"US"},
   "areaServed":[{"@type":"City","name":"Clovis"},{"@type":"City","name":"Fresno"},{"@type":"AdministrativeArea","name":"Fresno County, California"},{"@type":"AdministrativeArea","name":"California Central Valley"}],
   "foundingDate":"2022-04-27","founder":{"@type":"Person","name":"Jorge R. Zavala","jobTitle":"Founder and Chief Executive"},
   "identifier":[{"@type":"PropertyValue","name":"SAM.gov Unique Entity ID","value":"LA62PCQL63D3"},{"@type":"PropertyValue","name":"CAGE Code","value":"25K02"},{"@type":"PropertyValue","name":"Cal eProcure Bidder ID","value":"BID0135007"},{"@type":"PropertyValue","name":"California DGS Small Business/Micro Business Certification ID","value":"2055537"},{"@type":"PropertyValue","name":"California DBE (CUCP) Firm ID","value":"51112"}],
-  "knowsAbout":["Commercial cleaning","Janitorial services","Solar panel cleaning","Auto detailing","Ceramic coating","Surface care chemistry"],
+  "knowsAbout":["Auto detailing","Ceramic coating","Paint correction","Interior detailing","Headlight restoration","Hard water spot removal","Engine bay detailing","Solar panel cleaning","Commercial cleaning","Surface care chemistry"],
   "brand":{"@type":"Brand","name":"Miracle Spritz"},
   "hasOfferCatalog":{"@type":"OfferCatalog","name":"ShowRoom Doctor Z services and products","itemListElement":[
-   {"@type":"Offer","itemOffered":{"@type":"Service","name":"Commercial cleaning and janitorial services","areaServed":"Clovis and Fresno, California"}},
+   {"@type":"Offer","itemOffered":{"@type":"Service","name":"Auto detailing, ceramic coating, paint correction and interior restoration","areaServed":"Clovis and Fresno, California"}},
    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Solar panel surface care","areaServed":"California Central Valley"}},
-   {"@type":"Offer","itemOffered":{"@type":"Service","name":"Auto detailing, ceramic coating and hard water removal","areaServed":"Clovis and Fresno, California"}},
+   {"@type":"Offer","itemOffered":{"@type":"Service","name":"Commercial facility cleaning and surface care","areaServed":"Clovis and Fresno, California"}},
    {"@type":"Offer","itemOffered":{"@type":"Product","name":"Miracle Spritz pH 4.6 Multi-Surface Cleaner","brand":{"@type":"Brand","name":"Miracle Spritz"}}}]}},
  {"@type":"WebSite","@id":URL+"#website","url":URL,"name":"ShowRoom Doctor Z","publisher":{"@id":URL+"#business"},"inLanguage":"en-US"},
- {"@type":"WebPage","@id":URL+"#webpage","url":URL,"name":"ShowRoom Doctor Z | Commercial Cleaning, Solar Panel Cleaning and Auto Detailing in Clovis, CA","isPartOf":{"@id":URL+"#website"},"about":{"@id":URL+"#business"},"inLanguage":"en-US"},
+ {"@type":"WebPage","@id":URL+"#webpage","url":URL,"name":"ShowRoom Doctor Z | Auto Detailing, Ceramic Coating & Paint Correction in Clovis & Fresno, CA","isPartOf":{"@id":URL+"#website"},"about":{"@id":URL+"#business"},"inLanguage":"en-US"},
  {"@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"Where is ShowRoom Doctor Z located?","acceptedAnswer":{"@type":"Answer","text":"ShowRoom Doctor Z Inc. is at 1004 San Jose Ave, Suite 101, Clovis, California 93612. We serve Clovis, Fresno and the California Central Valley."}},
   {"@type":"Question","name":"Is ShowRoom Doctor Z registered to do business with government agencies?","acceptedAnswer":{"@type":"Answer","text":"Yes. ShowRoom Doctor Z Inc. has an active SAM.gov registration for all awards (UEI LA62PCQL63D3, CAGE 25K02), is a California DGS certified Small Business/Micro Business (ID 2055537), and a California DBE (Firm ID 51112)."}},
-  {"@type":"Question","name":"How do I request a quote?","acceptedAnswer":{"@type":"Answer","text":"Call 559-492-6329 or email drz@showroomdrz.com with the service you need, the address and the size of the space or vehicle."}}]}]}
+  {"@type":"Question","name":"How do I request a quote?","acceptedAnswer":{"@type":"Answer","text":"Call 559-492-6329 or email drz@showroomdrz.com with the service you need, the address and the size of the vehicle, array or space."}}]}]}
 ldj=json.dumps(ld,indent=1)
 html=f'''<!DOCTYPE html>
 <html lang="en-US">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ShowRoom Doctor Z | Commercial Cleaning, Solar Panel Cleaning &amp; Auto Detailing in Clovis, CA</title>
-<meta name="description" content="ShowRoom Doctor Z Inc. in Clovis, CA: commercial cleaning and janitorial services, solar panel surface care, hand auto detailing and ceramic coating, and Miracle Spritz pH 4.6 multi-surface cleaner. California certified small business and DBE. Call 559-492-6329.">
+<title>ShowRoom Doctor Z | Auto Detailing, Ceramic Coating &amp; Paint Correction in Clovis &amp; Fresno, CA</title>
+<meta name="description" content="ShowRoom Doctor Z in Clovis &amp; Fresno, CA: hand auto detailing, ceramic coating, paint correction, interior restoration, solar panel care, and Miracle Spritz pH 4.6 surface cleaner. Call 559-492-6329.">
+<meta name="keywords" content="auto detailing Clovis CA, car detailing Fresno CA, ceramic coating Clovis, paint correction Fresno, interior car detailing, headlight restoration, engine bay detail, Miracle Spritz">
 <link rel="canonical" href="{URL}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#111111">
@@ -41,17 +42,17 @@ html=f'''<!DOCTYPE html>
 <meta name="geo.placename" content="Clovis">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ShowRoom Doctor Z">
-<meta property="og:title" content="ShowRoom Doctor Z | Commercial Cleaning, Solar Panel Cleaning &amp; Auto Detailing in Clovis, CA">
-<meta property="og:description" content="Commercial cleaning, solar panel surface care, hand auto detailing and Miracle Spritz pH 4.6 cleaner. Clovis and Fresno, California.">
+<meta property="og:title" content="ShowRoom Doctor Z | Auto Detailing, Ceramic Coating &amp; Paint Correction in Clovis &amp; Fresno, CA">
+<meta property="og:description" content="Hand auto detailing, ceramic coating, paint correction, interior restoration, solar panel care, and Miracle Spritz pH 4.6 cleaner in Clovis and Fresno, CA.">
 <meta property="og:url" content="{URL}">
 <meta property="og:image" content="{URL}images/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="ShowRoom Doctor Z logo with the text Commercial cleaning, solar panel cleaning and auto detailing, Clovis, California">
+<meta property="og:image:alt" content="ShowRoom Doctor Z logo - Auto detailing, ceramic coating and surface care in Clovis and Fresno, California">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ShowRoom Doctor Z | Clovis, CA">
-<meta name="twitter:description" content="Commercial cleaning, solar panel surface care, auto detailing and Miracle Spritz pH 4.6 cleaner.">
+<meta name="twitter:title" content="ShowRoom Doctor Z | Auto Detailing &amp; Ceramic Coating in Clovis &amp; Fresno, CA">
+<meta name="twitter:description" content="Hand auto detailing, ceramic coating, paint correction, solar panel care and Miracle Spritz pH 4.6 cleaner.">
 <meta name="twitter:image" content="{URL}images/og-image.jpg">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -83,15 +84,15 @@ html=f'''<!DOCTYPE html>
 <section class="hero" id="top" aria-labelledby="h1">
  <div class="wrap hero-grid">
   <div>
-   <p class="eyebrow">Clovis, California &middot; Serving Fresno County and the Central Valley</p>
-   <h1 id="h1">Commercial cleaning, solar panel cleaning and auto detailing in Clovis, CA</h1>
-   <p class="lead">ShowRoom Doctor Z Inc. keeps buildings, solar arrays and vehicles looking their best, using Miracle Spritz, the pH 4.6 multi-surface cleaner we make ourselves in Clovis. We are a California certified small business and DBE, registered in SAM.gov for government work.</p>
+   <p class="eyebrow">Clovis &amp; Fresno, California &middot; Serving Fresno County and the Central Valley</p>
+   <h1 id="h1">Auto detailing, ceramic coating and paint correction in Clovis &amp; Fresno, CA</h1>
+   <p class="lead">ShowRoom Doctor Z delivers showroom-grade hand auto detailing, ceramic coatings, solar panel care, and commercial facility cleaning—powered by Miracle Spritz, our locally formulated pH 4.6 multi-surface cleaner.</p>
    <p class="cta">
     <a class="btn btn-primary" href="mailto:drz@showroomdrz.com?subject=Quote%20request%20from%20showroomdrz.com">Request a quote</a>
     <a class="btn btn-secondary" href="tel:+15594926329">Call 559-492-6329</a>
    </p>
    <ul class="chips" aria-label="Credentials">
-    <li>SAM.gov active</li><li>CA certified Small Business</li><li>California DBE</li><li>Locally made in Clovis</li>
+    <li>Showroom Auto Detailing</li><li>Ceramic Coating</li><li>CA Certified Small Business</li><li>Locally Made in Clovis</li>
    </ul>
   </div>
   <figure class="hero-fig">
@@ -103,12 +104,12 @@ html=f'''<!DOCTYPE html>
 <section id="services" class="section" aria-labelledby="h-services">
  <div class="wrap">
   <h2 id="h-services">What we do</h2>
-  <p class="sub">Three services, one local team, one phone number.</p>
+  <p class="sub">Three specialized divisions, one local team, one phone number.</p>
   <div class="cards">
    <article class="card">
-    <h3>Commercial cleaning and janitorial</h3>
-    <p>Custodial and building surface care, facility support, and recurring service for offices, shops and public buildings in Clovis and Fresno. Tell us the building and the schedule and we will quote it.</p>
-    <p class="meta">NAICS 561720, 561790, 561210</p>
+    <h3>Auto detailing, the ShowRoom</h3>
+    <p>Hand detailing, ceramic protective coating, paint correction, hard water spot removal, engine bay detail, headlight restoration and full interior restoration at our Clovis shop.</p>
+    <p class="meta">NAICS 811192</p>
    </article>
    <article class="card">
     <h3>Solar panel surface care</h3>
@@ -116,9 +117,9 @@ html=f'''<!DOCTYPE html>
     <p class="meta">Service area: Fresno County and the Central Valley</p>
    </article>
    <article class="card">
-    <h3>Auto detailing, the ShowRoom</h3>
-    <p>Hand detailing, ceramic protective coating, hard water spot removal, engine bay detail, headlight restoration and interior restoration, done by hand at our Clovis location.</p>
-    <p class="meta">NAICS 811192</p>
+    <h3>Commercial facility cleaning</h3>
+    <p>Custodial and building surface care, facility support, and recurring service for offices, shops and public buildings in Clovis and Fresno. Tell us the building and schedule for a quote.</p>
+    <p class="meta">NAICS 561720, 561790, 561210</p>
    </article>
   </div>
 
@@ -136,10 +137,10 @@ html=f'''<!DOCTYPE html>
  <div class="wrap two">
   <div>
    <h2 id="h-ms">Miracle Spritz pH 4.6 multi-surface cleaner</h2>
-   <p>Miracle Spritz is our own formula, a pH 4.6 multi-surface cleaner made and packaged in Clovis, California. It is an alternative to petroleum-solvent and caustic cleaners for maintenance garages, shops, offices, vehicles and solar panels. U.S. registered trademark No. 6,574,238.</p>
+   <p>Miracle Spritz is our own formula, a pH 4.6 multi-surface cleaner made and packaged in Clovis, California. It is an alternative to petroleum-solvent and caustic cleaners for vehicles, maintenance garages, shops, offices and solar panels. U.S. registered trademark No. 6,574,238.</p>
    <ul class="ticks">
     <li>Sizes: 16 oz and 32 oz spray bottles, 1-gallon bottles, 5-gallon carboys and 55-gallon drums</li>
-    <li>Used on facility surfaces, fleet vehicles and solar panels</li>
+    <li>Used on show cars, fleet vehicles, facility surfaces and solar panels</li>
     <li>Spray on, wipe off</li>
     <li>24 to 48 hour delivery across the Central Valley from our Clovis plant</li>
    </ul>
@@ -198,7 +199,7 @@ html=f'''<!DOCTYPE html>
  <div class="wrap narrow">
   <h2 id="h-faq">Common questions</h2>
   <details><summary>Where are you located?</summary><p>1004 San Jose Ave, Suite 101, Clovis, California 93612. We serve Clovis, Fresno and the California Central Valley.</p></details>
-  <details><summary>How do I get a quote?</summary><p>Call 559-492-6329 or email drz@showroomdrz.com with the service you need, the address, and the size of the space, array or vehicle.</p></details>
+  <details><summary>How do I get a quote?</summary><p>Call 559-492-6329 or email drz@showroomdrz.com with the service you need, the address, and the size of the vehicle, array or space.</p></details>
   <details><summary>Can government agencies buy from you?</summary><p>Yes. We are active in SAM.gov for all awards and are a California certified Small Business and DBE. Our identifiers are listed above.</p></details>
   <details><summary>Is Miracle Spritz a disinfectant?</summary><p>No. Miracle Spritz is a pH 4.6 multi-surface cleaner. It is not a disinfectant or a pesticide, and we make no germ-killing claims.</p></details>
  </div>
@@ -221,7 +222,7 @@ html=f'''<!DOCTYPE html>
   <div class="cta-box">
    <h3>Tell us what you need</h3>
    <p>Include the service, the address and the size of the job, and we will reply with a quote.</p>
-   <p><a class="btn btn-primary" href="mailto:drz@showroomdrz.com?subject=Quote%20request%20from%20showroomdrz.com&amp;body=Service%20needed%3A%0AAddress%3A%0ASize%20of%20space%2C%20array%20or%20vehicle%3A%0APreferred%20date%3A%0AYour%20name%20and%20phone%3A">Email a quote request</a></p>
+   <p><a class="btn btn-primary" href="mailto:drz@showroomdrz.com?subject=Quote%20request%20from%20showroomdrz.com&amp;body=Service%20needed%3A%0AAddress%3A%0ASize%20of%20vehicle%2C%20array%20or%20space%3A%0APreferred%20date%3A%0AYour%20name%20and%20phone%3A">Email a quote request</a></p>
    <p><a class="btn btn-secondary" href="tel:+15594926329">Call 559-492-6329</a></p>
   </div>
  </div>
